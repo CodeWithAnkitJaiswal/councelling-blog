@@ -112,3 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
         arrow.classList.toggle("up");
     }
 });
+
+// credit//document.addEventListener('DOMContentLoaded', (event) => {
+console.log("Credit section loaded.");
+// Add any interactive features here
