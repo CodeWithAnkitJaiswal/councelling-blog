@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', Courier, monospace;
+    overflow-x: hidden;
+    list-style: none;
+    text-decoration: none;
+}
+
+.listNum li {
+    list-style: inside;
+    list-style-type: decimal;
+    margin-bottom: 5px;
+}
+
+.listDisc li {
+    list-style: inside;
+    list-style-type: disc;
+    margin-bottom: 5px;
+}
+
+.listTry li {
+    list-style: inside;
+    list-style-type: upper-roman;
+    margin-bottom: 5px;
+}
+
+
+/* slide bar */
+
+
+/* For Firefox */
+
+
+/* Width of the scrollbar */
+
+body {
+    background-color: #fbeaeb;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f0f0f0;
+}
+
+
+/* For Chrome, Safari, and Opera */
+
+
+/* Width of the scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff0000;
+}
+
+
+/* utility classes */
+
+.t-margin {
+    margin-top: 7rem;
+}
+
+.lr-padding {
+    padding: 1rem 6vw;
+}
+
+.tb-margin {
+    margin: 5rem 0;
+}
+
+.page-title {
+    font-size: 50px;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    font-family: ubuntu;
+    text-wrap: balance;
+}
+
+
+/* styling page */
+
+
+/* nav */
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #000000c2;
+    position: fixed;
+    top: -1px;
+    width: 100%;
+    z-index: 3;
+}
+
+.logo {
+    font-size: 35px;
+    letter-spacing: 4px;
+    color: #ff2c2c;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.menu {
+    width: 60%;
+    font-size: 20px;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.underline {
+    position: relative;
+    width: 0;
+    height: 0;
+    bottom: 1px;
+    border-radius: 15px;
+    background: #c60000;
+    transition: width 0.6s ease-out;
+}
+
+.menu ul li:hover .underline {
+    width: 100%;
+    height: 4px;
+}
+
+.menu ul a {
+    color: white;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.containerAJ {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4rem;
+    justify-content: space-evenly;
+}
+
+.containerAJ h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.table {
+    width: 85%;
+    background: white;
+    padding: 3rem 2rem;
+    box-shadow: 0 0 10px black;
+    max-width: 800px;
+}
+
+.table ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 35px;
+}
+
+.table ul li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.table ul li img {
+    min-width: 40px;
+    max-width: 40px;
+}
+
+.table ul li a {
+    font-size: 20px;
+    text-wrap: wrap;
+    text-decoration: underline;
+    color: black;
+}
+
+.doubt {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 4rem;
+}
+
+.doubt:first-child {
+    margin-top: 0;
+}
+
+.flowChartImgContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flowChartImg {
+    background: url(https://raw.githubusercontent.com/iamaako/character-certificate-/main/flow.png);
+    background-size: contain;
+    background-position: center;
+    max-width: 800px;
+    width: 60%;
+    height: 40vw;
+    background-repeat: no-repeat;
+}
+
+
+/* responsive */
+
+@media screen and (max-width: 980px) {
+    .menu {
+        width: 75%;
+    }
+}
+
+.menu img {
+    display: none;
+}
+
+@media screen and (min-width: 787px) {
+    .menu-list {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .menu ul {
+        display: none;
+    }
+    .menu img {
+        display: inline;
+        width: 40px;
+        position: sticky;
+        left: 60vw;
+    }
+    .menu #close {
+        display: none;
+        transition: 1s;
+    }
+    .menu #close.active {
+        display: inline;
+        position: sticky;
+    }
+    .menu #open.active {
+        display: none;
+    }
+    .menu-list {
+        position: fixed;
+        width: 100%;
+        height: 80%;
+        left: -100%;
+        top: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background: #000000e3;
+        z-index: 2;
+        border-radius: 50%;
+        opacity: 30%;
+        transition: 0.6s ease-out;
+    }
+    .menu-list.active {
+        left: 0;
+        top: 0;
+        height: 100%;
+        opacity: 100%;
+        border-radius: 0;
+        display: flex;
+    }
+    .menu-list li a {
+        color: white;
+        font-size: 28px;
+        letter-spacing: 3px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .menu-list.active li:first-child {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .table {
+        width: 100%;
+    }
+    .flowChartImg {
+        width: 75%;
+        height: 40vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container h1 {
+        font-size: 40px;
+    }
+    .table ul li a {
+        font-size: 18px;
+    }
+    .table ul li img {
+        min-width: 30px;
+        max-width: 30px;
+    }
+}
+
+.colg {
+    background-color: rgba(255, 225, 0, 0.538);
+    border-radius: 20px;
+}
+
+
+/* for boxes in between the page */
+
+.curved-box {
+    background-color: rgba(200, 200, 200, 0.5);
+    /* light gray background with 50% opacity */
+    padding: 20px;
+    border-radius: 20px;
+    /* curved edges */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* shadow effect */
+}
+
+.curved-box h2 {
+    margin-top: 0;
+}
+
+.curved-box p {
+    margin-bottom: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #5e5d5d;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* Added to prevent resizing */
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    display: block;
+    margin: auto;
+    border: 2px solid black;
+}
+
+
+/* FOR AD */
+
+.ad {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.ad a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.ad a:hover {
+    text-decoration: underline;
+}
+
+.ad p {
+    display: inline-block;
+    position: relative;
+    animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+    0% {
+        text-shadow: 0 0 10px red;
+    }
+    50% {
+        text-shadow: none;
+    }
+    100% {
+        text-shadow: 0 0 10px red;
+    }
+}
+
+
+/* for flicker animation. */
+
+
+/* for important dates */
+
+.topcolleges {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#colleges-list {
+    list-style: none;
+    padding: 0;
+}
+
+#colleges-list li {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+
+#college-details {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #888;
+}
+
+#details-content {
+    margin-top: 20px;
+}
+
+
+/* FORCOLLEGETABLE */
+
+.toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+}
+
+.arrow.down {
+    border-top-color: black;
+    margin-left: 5px;
+}
+
+.arrow.up {
+    border-bottom-color: black;
+    margin-left: 5px;
+}
+
+
+/* FOR BORDERLINE */
+
+.curved-border {
+    border: 2px solid #000;
+    /* Border color */
+    border-radius: 20px;
+    /* Border radius to make it curved */
+    padding: 10px;
+    /* Padding inside the border */
+    display: inline-block;
+    /* Display as inline-block to wrap around content */
+}
+
+
+/* FOR PDF */
+
+.containerpdf {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.pdf1 {
+    color: #333;
+}
+
+.pdf2 {
+    color: #666;
+}
+
+.pdf3 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pdf3:hover {
+    background-color: #0056b3;
+}
